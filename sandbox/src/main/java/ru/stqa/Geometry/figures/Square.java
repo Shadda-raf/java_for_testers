@@ -1,7 +1,14 @@
 package ru.stqa.Geometry.figures;
 
 public class Square {
-     public static void printSquareArea(double side) {
+
+    double side;
+
+    public Square(double side) {
+        this.side = side;
+    }
+
+    public static void printSquareArea(double side) {
          System.out.println(String.format(
                 "Площадь квадрата со стороной %f = %f", side , area(side)));
     }
@@ -10,7 +17,12 @@ public class Square {
         return a * a;
     }
 
-    public static double perimetr(double a) {
-         return a*4;
+
+    public double area() {
+        return this.side * this.side;
+    }
+
+    public double perimetr() {
+        return this.side*4;
     }
 }
