@@ -2,6 +2,13 @@ package ru.stqa.Geometry.figures;
 
 public class Square {
 
+    public Square() {
+        if (side<0) {
+            throw new IllegalArgumentException("Square side shold be non-negative");
+
+        }
+    }
+
     double side;
 
     public Square(double side) {
@@ -9,8 +16,7 @@ public class Square {
     }
 
     public static void printSquareArea(double side) {
-         System.out.println(String.format(
-                "Площадь квадрата со стороной %f = %f", side , area(side)));
+         System.out.println(String.format(  "Площадь квадрата со стороной %f = %f", side , area(side)));
     }
 
     public static double area(double a) {
