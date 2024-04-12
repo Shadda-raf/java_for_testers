@@ -3,6 +3,8 @@ package ru.stqa.Geometry.figures;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class SquareTests {
     @Test
     void canCalculateArea(){
@@ -18,7 +20,7 @@ public class SquareTests {
 
     @Test
     void canCalculatePerimetr(){
-        Assertions.assertEquals(20.0,new Square(5.0).perimetr());
+        assertEquals(20.0,new Square(5.0).perimetr());
     }
 
     @Test
@@ -29,6 +31,14 @@ public class SquareTests {
         } catch (IllegalArgumentException exception) {
             //OK
         }
+    }
+
+
+    @Test
+    void testEquality(){
+         var s1 = new Square(5.0);
+         var s2 = new Square(5.0);
+         Assertions.assertTrue(s1.equals(s2));
     }
 
 }

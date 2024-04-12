@@ -1,18 +1,13 @@
 package ru.stqa.Geometry.figures;
 
-public class Square {
+public record Square(double side) {
 
-    public Square() {
-        if (side<0) {
+
+
+    public Square {
+        if (side < 0) {
             throw new IllegalArgumentException("Square side shold be non-negative");
-
         }
-    }
-
-    double side;
-
-    public Square(double side) {
-        this.side = side;
     }
 
     public static void printSquareArea(double side) {
